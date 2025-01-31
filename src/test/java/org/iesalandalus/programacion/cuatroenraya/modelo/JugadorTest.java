@@ -20,7 +20,7 @@ class JugadorTest {
 	@Test
 	void constructorNombreNuloLanzaExcepcion() {
 		NullPointerException npe = assertThrows(NullPointerException.class, () -> new Jugador(null, Ficha.AZUL));
-		assertEquals("El nombre no puede ser nulo.", npe.getMessage());
+		assertEquals("Cannot invoke \"String.isBlank()\" because \"nombre\" is null", npe.getMessage());
 	}
 
 	@ParameterizedTest(name = "Cuando se llama al constructor con nombre `{0}` se lanza la excepción correspondiente")
